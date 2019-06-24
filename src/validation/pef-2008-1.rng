@@ -261,7 +261,27 @@
 			<zeroOrMore>
 				<ref name="attribute.anyExceptDefault"/>
 			</zeroOrMore>
+			<choice>
+				<ref name="datatype.string.unicode.braille"/>
+				<zeroOrMore>
+					<choice>
+						<ref name="element.nav"/>
+						<ref name="element.span"/>
+					</choice>
+				</zeroOrMore>
+			</choice>
+		</element>
+	</define>
+	
+	<define name="element.span">
+		<element name="span">
 			<ref name="datatype.string.unicode.braille"/>
+		</element>
+	</define>
+	
+	<define name="element.nav">
+		<element name="nav">
+			<empty/>
 		</element>
 	</define>
 
